@@ -45,7 +45,7 @@ const ProductDetail = () => {
             <InquireModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
-                productName={product.name}
+                product={product}
             />
         </div>
     );

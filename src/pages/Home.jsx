@@ -47,7 +47,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="benefits-image-wrapper">
-                        <img src="/assets/benefits-bowl.png" alt="Cinnamon Powder and Sticks" className="benefits-image" />
+                        <img src="/assets/benefits-bowl-final.png" alt="Cinnamon Powder and Sticks" className="benefits-image" />
                     </div>
                 </div>
             </section>
