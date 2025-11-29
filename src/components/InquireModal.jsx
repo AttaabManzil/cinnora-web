@@ -1,80 +1,69 @@
-import React, { useState } from 'react';
-import '../styles/ProductDetail.css'; // We'll add modal styles here
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import '../styles/ProductDetail.css';
 
-const InquireModal = ({ isOpen, onClose, productName }) => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        message: `I would like to inquire about ${productName}.`
-    });
+const InquireModal = ({ product, isOpen, onClose }) => {
+    const form = useRef();
+    const [isSending, setIsSending] = useState(false);
 
     if (!isOpen) return null;
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-    };
-
-    const handleSubmit = (e) => {
+    const sendEmail = (e) => {
         e.preventDefault();
-        // Here you would typically send the data to a backend
-        alert(`Thank you, ${formData.name}! Your inquiry for ${productName} has been sent.`);
-        onClose();
+        setIsSending(true);
+
+        emailjs
+            .sendForm('service_pnmmdmj', 'template_fmutxir', form.current, {
+                publicKey: 'sE414j78e-rqUy8p7',
+            })
+            .then(
+                () => {
+                    alert('Inquiry sent successfully!');
+                    setIsSending(false);
+                    onClose();
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                    alert('Failed to send inquiry. Please try again.');
+                    setIsSending(false);
+                },
+            );
     };
 
     return (
         <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <button className="modal-close" onClick={onClose}>&times;</button>
-                <h2>Inquire About Product</h2>
-                <p className="modal-subtitle">{productName}</p>
+                <h2>Inquire about {product.name}</h2>
+                <form ref={form} onSubmit={sendEmail} className="inquire-form">
+                    {/* Hidden input for product name so it's sent in the email */}
+                    <input type="hidden" name="product_name" value={product.name} />
 
-                <form onSubmit={handleSubmit} className="inquire-form">
                     <div className="form-group">
                         <label htmlFor="name">Name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                        />
+                        <input type="text" name="name" id="name" required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                        />
+                        <input type="email" name="email" id="email" required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="phone">Phone (Optional)</label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
-                        />
+                        <input type="tel" name="phone" id="phone" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="message">Message</label>
                         <textarea
-                            id="message"
                             name="message"
-                            value={formData.message}
-                            onChange={handleChange}
+                            id="message"
                             rows="4"
+                            defaultValue={`I am interested in learning more about ${product.name}. Please send me more details.`}
                             required
                         ></textarea>
                     </div>
-                    <button type="submit" className="btn-submit">Send Inquiry</button>
+                    <button type="submit" className="btn-submit" disabled={isSending}>
+                        {isSending ? 'Sending...' : 'Send Inquiry'}
+                    </button>
                 </form>
             </div>
         </div>

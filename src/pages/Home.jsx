@@ -47,7 +47,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="benefits-image-wrapper">
-                        <img src="/assets/benefits-new.png" alt="Cinnamon Powder and Sticks" className="benefits-image" />
+                        <img src="/assets/benefits-bowl.png" alt="Cinnamon Powder and Sticks" className="benefits-image" />
                     </div>
                 </div>
             </section>
@@ -63,7 +63,7 @@ const Home = () => {
                             <div className="product-info">
                                 <h3>Cinnamon Powder</h3>
                                 <p>Authentic Ceylon Cinnamon</p>
-                                <button className="btn-text">View Details</button>
+                                <Link to="/products/1" className="btn-text">View Details</Link>
                             </div>
                         </div>
                         <div className="product-card">
@@ -73,18 +73,18 @@ const Home = () => {
                             <div className="product-info">
                                 <h3>Black Pepper Powder</h3>
                                 <p>Bold and Aromatic</p>
-                                <button className="btn-text">View Details</button>
+                                <Link to="/products/2" className="btn-text">View Details</Link>
                             </div>
                         </div>
                         <div className="product-card">
                             <div className="product-image-container">
-                                {/* Placeholder for Cardamom as I only generated 2 product images */}
+                                {/* Placeholder for Cardamom */}
                                 <div className="product-image-placeholder" style={{ backgroundColor: '#E8E8E8' }}></div>
                             </div>
                             <div className="product-info">
                                 <h3>Cardamom Powder</h3>
                                 <p>The Queen of Spices</p>
-                                <button className="btn-text">View Details</button>
+                                <Link to="/products/8" className="btn-text">View Details</Link>
                             </div>
                         </div>
                     </div>
