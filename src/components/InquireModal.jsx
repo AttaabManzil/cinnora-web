@@ -1,12 +1,21 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import StatusModal from './StatusModal';
 import '../styles/ProductDetail.css';
 
 const InquireModal = ({ product, isOpen, onClose }) => {
     const form = useRef();
     const [isSending, setIsSending] = useState(false);
+    const [statusModal, setStatusModal] = useState({ isOpen: false, type: 'success', title: '', message: '' });
 
-    if (!isOpen) return null;
+    if (!isOpen && !statusModal.isOpen) return null;
+
+    const handleCloseStatus = () => {
+        setStatusModal({ ...statusModal, isOpen: false });
+        if (statusModal.type === 'success') {
+            onClose();
+        }
+    };
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -18,17 +27,39 @@ const InquireModal = ({ product, isOpen, onClose }) => {
             })
             .then(
                 () => {
-                    alert('Inquiry sent successfully!');
                     setIsSending(false);
-                    onClose();
+                    setStatusModal({
+                        isOpen: true,
+                        type: 'success',
+                        title: 'Inquiry Sent!',
+                        message: 'Thank you for your interest. We have received your inquiry and will get back to you shortly.'
+                    });
                 },
                 (error) => {
                     console.log('FAILED...', error.text);
-                    alert('Failed to send inquiry. Please try again.');
                     setIsSending(false);
+                    setStatusModal({
+                        isOpen: true,
+                        type: 'error',
+                        title: 'Sending Failed',
+                        message: 'Something went wrong. Please try again later or contact us directly at info@cinnora.store.'
+                    });
                 },
             );
     };
+
+    // If status modal is open, render it instead of the form modal (or on top)
+    if (statusModal.isOpen) {
+        return (
+            <StatusModal
+                isOpen={statusModal.isOpen}
+                onClose={handleCloseStatus}
+                title={statusModal.title}
+                message={statusModal.message}
+                type={statusModal.type}
+            />
+        );
+    }
 
     return (
         <div className="modal-overlay" onClick={onClose}>

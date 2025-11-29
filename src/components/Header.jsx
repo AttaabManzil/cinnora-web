@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/Header.css';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
+    const isHome = location.pathname === '/';
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
     return (
-        <header className="header">
+        <header className={`header ${isHome ? 'header-transparent' : ''}`}>
             <div className="container header-container">
                 <Link to="/" className="logo">
-                    <img src="/assets/logo-dark.png" alt="Cinnora" className="logo-image" />
+                    <img src={isHome ? "/assets/logo-dark.png" : "/assets/logo-dark.png"} alt="Cinnora" className="logo-image" />
                 </Link>
                 <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
                     <ul className="nav-list">

@@ -2,15 +2,21 @@
 
 .header {
     background-color: rgba(255, 255, 255, 0.95);
-    /* Slightly transparent white */
     backdrop-filter: blur(10px);
-    /* Frosted glass effect */
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
     padding: var(--spacing-sm) 0;
     transition: all 0.3s ease;
+}
+
+.header.header-transparent {
+    background-color: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+    position: absolute;
+    width: 100%;
 }
 
 .header-container {
@@ -40,12 +46,17 @@
     font-family: var(--font-body);
     font-weight: 500;
     color: var(--color-espresso);
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 0.9rem;
     position: relative;
     padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.header-transparent .nav-link {
+    color: var(--color-white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .nav-link::after {
@@ -59,12 +70,21 @@
     transition: width 0.3s ease;
 }
 
+.header-transparent .nav-link::after {
+    background-color: var(--color-white);
+}
+
 .nav-link:hover::after {
     width: 100%;
 }
 
 .nav-link:hover {
     color: var(--color-cinnamon);
+}
+
+.header-transparent .nav-link:hover {
+    color: var(--color-white);
+    opacity: 0.8;
 }
 
 .menu-toggle {
@@ -119,7 +139,6 @@
 /* Logo Styles */
 .logo-image {
     height: 120px;
-    /* Significantly increased size as requested */
     width: auto;
     display: block;
     transition: transform 0.3s ease;
