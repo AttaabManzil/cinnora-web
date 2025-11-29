@@ -8,9 +8,9 @@ const Home = () => {
             <section className="hero" style={{ backgroundImage: "url('/assets/hero-new.png')" }}>
                 <div className="hero-overlay"></div>
                 <div className="container hero-content">
-                    <h1 className="hero-title fade-in-up">Experience the Essence of Ceylon</h1>
-                    <p className="hero-subtitle fade-in-up delay-1">Premium powdered spices from the heart of Sri Lanka.</p>
-                    <a href="#products" className="btn btn-hero fade-in-up delay-2">DISCOVER OUR SPICES</a>
+                    <h1 className="hero-title fade-in-up">The Gold Standard of Spice</h1>
+                    <p className="hero-subtitle fade-in-up delay-1">100% Authentic Ceylon Cinnamon and premium spices, hand-harvested in the heart of Sri Lanka.</p>
+                    <a href="#products" className="btn btn-hero fade-in-up delay-2">Shop the Collection</a>
                 </div>
             </section>
 
