@@ -23,9 +23,11 @@
 }
 
 .footer-logo {
-    color: var(--color-white);
-    font-size: 2rem;
-    margin-bottom: var(--spacing-xs);
+    height: 150px;
+    /* Significantly increased size as requested */
+    width: auto;
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.9;
 }
 
 .footer h3 {
@@ -45,6 +47,8 @@
 .footer a {
     color: var(--color-sand-storm);
     opacity: 0.8;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
 }
 
 .footer a:hover {
@@ -54,18 +58,31 @@
 
 .footer-bottom {
     text-align: center;
-    margin-top: var(--spacing-md);
-    padding-top: var(--spacing-md);
+    padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #a0a0a0;
     font-size: 0.9rem;
-    opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* Footer Logo */
-.footer-logo {
-    height: 150px;
-    /* Significantly increased size as requested */
-    width: auto;
-    margin-bottom: var(--spacing-sm);
-    opacity: 0.9;
+.footer-legal {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-legal a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--color-gold);
+}
+
+.separator {
+    color: #555;
 }

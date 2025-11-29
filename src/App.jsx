@@ -11,6 +11,10 @@ import './App.css';
 
 import ScrollToTop from './components/ScrollToTop';
 
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import NotFound from './pages/NotFound';
+
 function App() {
   return (
     <Router>
@@ -24,6 +28,9 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
