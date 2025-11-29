@@ -1,0 +1,227 @@
+/* Product Detail Page Styles */
+.product-detail-page {
+    padding: var(--spacing-xl) 0;
+    min-height: 80vh;
+    background-color: var(--color-white);
+}
+
+.product-detail-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    flex-direction: row;
+}
+
+.product-detail-info {
+    flex: 1;
+    padding-right: var(--spacing-lg);
+}
+
+.detail-category {
+    color: var(--color-cinnamon);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+.detail-title {
+    font-size: 3.5rem;
+    color: var(--color-espresso);
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.1;
+}
+
+.detail-description {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-xl);
+    max-width: 90%;
+}
+
+.detail-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.btn-inquire {
+    min-width: 180px;
+    text-align: center;
+}
+
+.btn-contact {
+    min-width: 180px;
+    text-align: center;
+    border-color: var(--color-espresso);
+    color: var(--color-espresso);
+}
+
+.btn-contact:hover {
+    background-color: var(--color-espresso);
+    color: var(--color-white);
+}
+
+.product-detail-image-wrapper {
+    flex: 1;
+    height: 500px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--color-espresso);
+}
+
+.modal-content h2 {
+    color: var(--color-espresso);
+    margin-bottom: 5px;
+    font-family: var(--font-heading);
+}
+
+.modal-subtitle {
+    color: var(--color-cinnamon);
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--color-espresso);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-cinnamon);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--color-cinnamon);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-espresso);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .product-detail-container {
+        flex-direction: column-reverse;
+        /* Image on top on mobile? Or bottom? Let's keep standard stacking */
+        flex-direction: column;
+    }
+
+    .product-detail-info {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .detail-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .detail-actions {
+        justify-content: center;
+    }
+
+    .product-detail-image-wrapper {
+        width: 100%;
+        height: 300px;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .detail-title {
+        font-size: 2.5rem;
+    }
+}

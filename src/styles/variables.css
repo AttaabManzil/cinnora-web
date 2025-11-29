@@ -1,0 +1,26 @@
+:root {
+  /* Brand Colors */
+  --color-espresso: #482E1D;
+  --color-cinnamon: #90553C;
+  --color-caramel: #895D2B;
+  --color-leafy: #A3966A;
+  --color-sand-storm: #F0DAAE;
+
+  /* Functional Colors */
+  --color-bg-primary: var(--color-sand-storm);
+  --color-text-primary: var(--color-espresso);
+  --color-text-secondary: var(--color-caramel);
+  --color-accent: var(--color-cinnamon);
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+}

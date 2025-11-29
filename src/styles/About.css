@@ -1,0 +1,45 @@
+.about-hero {
+    background-color: var(--color-cinnamon);
+    color: var(--color-white);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.about-title {
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.about-content {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-white);
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-text h2 {
+    color: var(--color-espresso);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.about-text p {
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+}
+/* About Logo */
+.about-logo-container {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.about-logo {
+  height: 100px;
+  width: auto;
+}
+
