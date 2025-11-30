@@ -286,32 +286,6 @@
 
 /* About Teaser */
 .about-teaser {
-    padding: var(--spacing-xl) 0;
-    background-color: var(--color-espresso);
-    color: var(--color-white);
-    text-align: center;
-    background-image: linear-gradient(rgba(72, 46, 29, 0.9), rgba(72, 46, 29, 0.9)), url('/assets/hero-bg.png');
-    /* Reuse bg for texture */
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.teaser-content h2 {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-md);
-    color: var(--color-white);
-}
-
-.teaser-content p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto var(--spacing-lg);
-    opacity: 0.9;
-}
-
-/* Contact CTA */
-.contact-cta {
-    padding: var(--spacing-xl) 0;
     background-color: var(--color-leafy);
     color: var(--color-white);
     text-align: center;
