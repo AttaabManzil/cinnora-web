@@ -62,27 +62,27 @@ const InquireModal = ({ product, isOpen, onClose }) => {
     }
 
     return (
-        <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <button className="modal-close" onClick={onClose}>&times;</button>
+        <div className="inquire-modal-overlay" onClick={onClose}>
+            <div className="inquire-modal-content" onClick={(e) => e.stopPropagation()}>
+                <button className="inquire-modal-close" onClick={onClose}>&times;</button>
                 <h2>Inquire about {product.name}</h2>
                 <form ref={form} onSubmit={sendEmail} className="inquire-form">
                     {/* Hidden input for product name so it's sent in the email */}
                     <input type="hidden" name="product_name" value={product.name} />
 
-                    <div className="form-group">
+                    <div className="inquire-form-group">
                         <label htmlFor="name">Name</label>
                         <input type="text" name="name" id="name" required />
                     </div>
-                    <div className="form-group">
+                    <div className="inquire-form-group">
                         <label htmlFor="email">Email</label>
                         <input type="email" name="email" id="email" required />
                     </div>
-                    <div className="form-group">
+                    <div className="inquire-form-group">
                         <label htmlFor="phone">Phone (Optional)</label>
                         <input type="tel" name="phone" id="phone" />
                     </div>
-                    <div className="form-group">
+                    <div className="inquire-form-group">
                         <label htmlFor="message">Message</label>
                         <textarea
                             name="message"
@@ -92,7 +92,7 @@ const InquireModal = ({ product, isOpen, onClose }) => {
                             required
                         ></textarea>
                     </div>
-                    <button type="submit" className="btn-submit" disabled={isSending}>
+                    <button type="submit" className="inquire-btn-submit" disabled={isSending}>
                         {isSending ? 'Sending...' : 'Send Inquiry'}
                     </button>
                 </form>

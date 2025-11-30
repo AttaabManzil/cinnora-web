@@ -89,7 +89,7 @@
 }
 
 /* Modal Styles */
-.modal-overlay {
+.inquire-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -103,7 +103,7 @@
     backdrop-filter: blur(5px);
 }
 
-.modal-content {
+.inquire-modal-content {
     background-color: var(--color-white);
     padding: var(--spacing-xl);
     border-radius: 12px;
@@ -126,7 +126,7 @@
     }
 }
 
-.modal-close {
+.inquire-modal-close {
     position: absolute;
     top: 15px;
     right: 20px;
@@ -138,35 +138,35 @@
     transition: color 0.2s;
 }
 
-.modal-close:hover {
+.inquire-modal-close:hover {
     color: var(--color-espresso);
 }
 
-.modal-content h2 {
+.inquire-modal-content h2 {
     color: var(--color-espresso);
     margin-bottom: 5px;
     font-family: var(--font-heading);
 }
 
-.modal-subtitle {
+.inquire-modal-subtitle {
     color: var(--color-cinnamon);
     font-weight: 600;
     margin-bottom: var(--spacing-lg);
 }
 
-.form-group {
+.inquire-form-group {
     margin-bottom: var(--spacing-md);
 }
 
-.form-group label {
+.inquire-form-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
     color: var(--color-espresso);
 }
 
-.form-group input,
-.form-group textarea {
+.inquire-form-group input,
+.inquire-form-group textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -176,13 +176,13 @@
     transition: border-color 0.3s;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.inquire-form-group input:focus,
+.inquire-form-group textarea:focus {
     outline: none;
     border-color: var(--color-cinnamon);
 }
 
-.btn-submit {
+.inquire-btn-submit {
     width: 100%;
     padding: 14px;
     background-color: var(--color-cinnamon);
@@ -195,7 +195,7 @@
     transition: background-color 0.3s;
 }
 
-.btn-submit:hover {
+.inquire-btn-submit:hover {
     background-color: var(--color-espresso);
 }
 

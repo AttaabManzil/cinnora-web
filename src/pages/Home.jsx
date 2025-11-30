@@ -68,7 +68,7 @@ const Home = () => {
                         </div>
                         <div className="product-card">
                             <div className="product-image-container">
-                                <img src="/assets/pepper.png" alt="Black Pepper Powder" className="product-image" />
+                                <img src="/assets/black-pepper-powder.png" alt="Black Pepper Powder" className="product-image" />
                             </div>
                             <div className="product-info">
                                 <h3>Black Pepper Powder</h3>
@@ -78,8 +78,7 @@ const Home = () => {
                         </div>
                         <div className="product-card">
                             <div className="product-image-container">
-                                {/* Placeholder for Cardamom */}
-                                <div className="product-image-placeholder" style={{ backgroundColor: '#E8E8E8' }}></div>
+                                <img src="/assets/cardamom-powder.jpg" alt="Cardamom Powder" className="product-image" />
                             </div>
                             <div className="product-info">
                                 <h3>Cardamom Powder</h3>
