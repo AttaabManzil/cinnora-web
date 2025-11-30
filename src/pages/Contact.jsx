@@ -49,48 +49,62 @@ const Contact = () => {
                 message={statusModal.message}
                 type={statusModal.type}
             />
-            <div className="container contact-container">
-                <h1 className="contact-title">Contact Us</h1>
-                <div className="contact-content">
-                    <div className="contact-info">
-                        <div className="info-item">
-                            <h3>Address</h3>
-                            <p>123 Spice Garden Road,<br />Colombo 07, Sri Lanka</p>
+
+            <div className="contact-hero">
+                <div className="container">
+                    <h1 className="contact-title">Contact Us</h1>
+                    <p className="contact-subtitle">We'd love to hear from you. Reach out to us for any inquiries.</p>
+                </div>
+            </div>
+
+            <div className="contact-content">
+                <div className="container">
+                    <div className="contact-grid">
+                        <div className="contact-info">
+                            <h2>Get in Touch</h2>
+                            <p>Have questions about our products or want to place a bulk order? We're here to help.</p>
+
+                            <div className="info-item">
+                                <h3>Address</h3>
+                                <p>123 Spice Garden Road,<br />Colombo 07, Sri Lanka</p>
+                            </div>
+                            <div className="info-item">
+                                <h3>Email</h3>
+                                <p>info@cinnora.store</p>
+                            </div>
+                            <div className="info-item">
+                                <h3>Phone</h3>
+                                <p>+94 77 877 8917</p>
+                            </div>
                         </div>
-                        <div className="info-item">
-                            <h3>Email</h3>
-                            <p>info@cinnora.store</p>
-                        </div>
-                        <div className="info-item">
-                            <h3>Phone</h3>
-                            <p>+94 77 877 8917</p>
+
+                        <div className="contact-form-wrapper">
+                            <form ref={form} onSubmit={sendEmail} className="contact-form">
+                                {/* Hidden input for product name default */}
+                                <input type="hidden" name="product_name" value="General Inquiry" />
+
+                                <div className="form-group">
+                                    <label htmlFor="user_name">Name</label>
+                                    <input type="text" name="user_name" id="user_name" required />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="user_email">Email</label>
+                                    <input type="email" name="user_email" id="user_email" required />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="subject">Subject</label>
+                                    <input type="text" name="subject" id="subject" required />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="message">Message</label>
+                                    <textarea name="message" id="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" className="btn btn-primary btn-submit" disabled={isSending}>
+                                    {isSending ? 'Sending...' : 'Send Message'}
+                                </button>
+                            </form>
                         </div>
                     </div>
-
-                    <form ref={form} onSubmit={sendEmail} className="contact-form">
-                        {/* Hidden input for product name default */}
-                        <input type="hidden" name="product_name" value="General Inquiry" />
-
-                        <div className="form-group">
-                            <label htmlFor="user_name">Name</label>
-                            <input type="text" name="user_name" id="user_name" required />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="user_email">Email</label>
-                            <input type="email" name="user_email" id="user_email" required />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="subject">Subject</label>
-                            <input type="text" name="subject" id="subject" required />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="message">Message</label>
-                            <textarea name="message" id="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" className="btn btn-primary btn-submit" disabled={isSending}>
-                            {isSending ? 'Sending...' : 'Send Message'}
-                        </button>
-                    </form>
                 </div>
             </div>
         </div>
