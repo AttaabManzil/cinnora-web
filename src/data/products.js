@@ -3,7 +3,7 @@ export const products = [
         id: 1,
         name: 'Cinnamon Powder',
         category: 'Spices Powder',
-        image: '',
+        image: '/assets/cinnamon-powder.png',
         description: 'Our premium Ceylon Cinnamon powder is made from the finest quills, ground to perfection to preserve its sweet, warm aroma and distinct flavor. Perfect for baking, cooking, and beverages.'
     },
     {

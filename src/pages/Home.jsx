@@ -58,7 +58,7 @@ const Home = () => {
                     <div className="products-grid">
                         <div className="product-card">
                             <div className="product-image-container">
-                                <img src="/assets/cinnamon.png" alt="Cinnamon Powder" className="product-image" />
+                                <img src="/assets/cinnamon-powder.png" alt="Cinnamon Powder" className="product-image" />
                             </div>
                             <div className="product-info">
                                 <h3>Cinnamon Powder</h3>

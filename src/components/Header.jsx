@@ -15,7 +15,7 @@ const Header = () => {
         <header className={`header ${isHome ? 'header-transparent' : ''}`}>
             <div className="container header-container">
                 <Link to="/" className="logo">
-                    <img src={isHome ? "/assets/logo-dark.png" : "/assets/logo-dark.png"} alt="Cinnora" className="logo-image" />
+                    <img src={isHome ? "/assets/logo-light.png" : "/assets/logo-dark.png"} alt="Cinnora" className="logo-image" />
                 </Link>
                 <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
                     <ul className="nav-list">
