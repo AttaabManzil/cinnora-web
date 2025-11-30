@@ -5,12 +5,12 @@ import '../styles/Home.css';
 const Home = () => {
     return (
         <div className="home">
-            <section className="hero" style={{ backgroundImage: "url('/assets/hero-new.png')" }}>
+            <section className="hero" style={{ backgroundImage: "url('/assets/hero-new-2.png')" }}>
                 <div className="hero-overlay"></div>
                 <div className="container hero-content">
-                    <h1 className="hero-title fade-in-up">The Gold Standard of Spice</h1>
+                    <h1 className="hero-title fade-in-up">From the Pearl of the Indian Ocean.<br />Experience the Authentic Essence of Ceylon.</h1>
                     <p className="hero-subtitle fade-in-up delay-1">100% Authentic Ceylon Cinnamon and premium spices, hand-harvested in the heart of Sri Lanka.</p>
-                    <a href="#products" className="btn btn-hero fade-in-up delay-2">Shop the Collection</a>
+                    <Link to="/products" className="btn btn-hero fade-in-up delay-2">Shop the Collection</Link>
                 </div>
             </section>
 
