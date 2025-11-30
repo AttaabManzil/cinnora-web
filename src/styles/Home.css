@@ -35,48 +35,6 @@
 
 .delay-2 {
     animation-delay: 0.4s;
-}
-
-/* Hero Section */
-.hero {
-    position: relative;
-    height: 90vh;
-    min-height: 600px;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    /* Parallax effect */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--color-white);
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    font-size: 3rem;
-    color: var(--color-espresso);
-    margin-bottom: var(--spacing-xl);
-    position: relative;
-    display: inline-block;
-    width: 100%;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--color-cinnamon);
-    margin: var(--spacing-xs) auto 0;
-}
-
-/* Benefits Section */
-.benefits-section {
     padding: var(--spacing-xl) 0;
     background-color: var(--color-white);
     overflow: hidden;
