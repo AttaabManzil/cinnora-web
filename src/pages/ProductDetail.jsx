@@ -37,8 +37,11 @@ const ProductDetail = () => {
                 </div>
 
                 <div className="product-detail-image-wrapper">
-                    {/* Placeholder for now, will be replaced with product.image */}
-                    <div className="detail-placeholder"></div>
+                    {product.image ? (
+                        <img src={product.image} alt={product.name} className="detail-image" />
+                    ) : (
+                        <div className="detail-placeholder"></div>
+                    )}
                 </div>
             </div>
 

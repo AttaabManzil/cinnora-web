@@ -12,8 +12,11 @@ const Products = () => {
                     {products.map((product) => (
                         <div key={product.id} className="product-card-page">
                             <div className="product-image-wrapper-page">
-                                {/* Placeholder for product image */}
-                                <div className="product-placeholder"></div>
+                                {product.image ? (
+                                    <img src={product.image} alt={product.name} className="product-image-page" />
+                                ) : (
+                                    <div className="product-placeholder"></div>
+                                )}
                             </div>
                             <div className="product-details-page">
                                 <span className="product-category">{product.category}</span>
