@@ -7,10 +7,13 @@ const Products = () => {
     return (
         <div className="products-page">
             <div className="container">
+
                 <h1 className="products-title">Our Premium Products</h1>
+
                 <div className="products-grid-page">
                     {products.map((product) => (
                         <div key={product.id} className="product-card-page">
+
                             <div className="product-image-wrapper-page">
                                 {product.image ? (
                                     <img src={product.image} alt={product.name} className="product-image-page" />
@@ -18,11 +21,16 @@ const Products = () => {
                                     <div className="product-placeholder"></div>
                                 )}
                             </div>
+
                             <div className="product-details-page">
                                 <span className="product-category">{product.category}</span>
                                 <h3 className="product-name">{product.name}</h3>
-                                <Link to={`/products/${product.id}`} className="btn btn-primary">View Product</Link>
+
+                                <Link to={`/products/${product.id}`} className="btn btn-primary">
+                                    View Product
+                                </Link>
                             </div>
+
                         </div>
                     ))}
                 </div>
