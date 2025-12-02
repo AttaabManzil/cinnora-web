@@ -90,15 +90,20 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="about-teaser">
+            <section className="story-section">
                 <div className="container">
-                    <div className="teaser-content">
-                        <h2>The Cinnora Story</h2>
+                    <div className="story-content">
+                        <h2 className="section-title">Authentic Sri Lankan Spices, Delivered Worldwide</h2>
                         <p>
-                            Discover the heritage behind our premium spices. From the lush gardens of Sri Lanka to your kitchen,
-                            learn about our commitment to quality and tradition.
+                            At Cinnora, we bring the true taste of Sri Lanka to the world. Sourced from trusted growers and harvested with care, our spices are fresh, pure, and full of natural aroma. From Ceylon cinnamon to bold black pepper and handpicked cloves, every product reflects the rich agricultural heritage of the island.
                         </p>
-                        <Link to="/about" className="btn btn-outline">Read Our Story</Link>
+                        <p>
+                            Whether you are a restaurant, retailer, or small business, we offer premium-quality spices with consistency, traceability, and global export support.
+                        </p>
+                        <p className="story-highlight">
+                            Experience the difference of real Sri Lankan flavor.
+                        </p>
+                        <Link to="/about" className="btn btn-primary btn-large">Discover Our Story &rarr;</Link>
                     </div>
                 </div>
             </section>
@@ -129,9 +134,11 @@ const Home = () => {
 
             <section className="contact-cta">
                 <div className="container">
-                    <h2>Ready to Order?</h2>
-                    <p>Get in touch with us for bulk orders, wholesale inquiries, or any other questions.</p>
-                    <Link to="/contact" className="btn btn-primary">Contact Us</Link>
+                    <div className="cta-content">
+                        <h2>Ready to Order?</h2>
+                        <p>Get in touch with us for bulk orders, wholesale inquiries, or any other questions.</p>
+                        <Link to="/contact" className="btn btn-white btn-large">Contact Us</Link>
+                    </div>
                 </div>
             </section>
         </div>

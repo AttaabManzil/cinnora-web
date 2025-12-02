@@ -35,53 +35,6 @@
     line-height: 1.1;
 }
 
-.detail-description {
-    font-size: 1.1rem;
-    color: var(--color-text-secondary);
-    line-height: 1.8;
-    margin-bottom: var(--spacing-xl);
-    max-width: 90%;
-}
-
-.detail-actions {
-    display: flex;
-    gap: var(--spacing-md);
-}
-
-.btn-inquire {
-    min-width: 180px;
-    text-align: center;
-}
-
-.btn-contact {
-    min-width: 180px;
-    text-align: center;
-    border-color: var(--color-espresso);
-    color: var(--color-espresso);
-}
-
-.btn-contact:hover {
-    background-color: var(--color-espresso);
-    color: var(--color-white);
-}
-
-.product-detail-image-wrapper {
-    flex: 1;
-    height: 500px;
-    background-color: #f9f9f9;
-    border-radius: 20px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.detail-placeholder {
-    width: 100%;
-    height: 100%;
-    background-color: #eee;
-}
-
 .detail-image {
     width: 100%;
     height: 100%;

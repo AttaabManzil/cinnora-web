@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { products } from '../data/products';
-import InquireModal from '../components/InquireModal';
 import '../styles/ProductDetail.css';
 
 const ProductDetail = () => {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         const foundProduct = products.find(p => p.id === parseInt(id));
         setProduct(foundProduct);
     }, [id]);
+
+    const handleInquire = () => {
+        const message = `I am interested in learning more about ${product.name}.`;
+        const whatsappUrl = `https://wa.me/94778778917?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+    };
 
     if (!product) {
         return <div className="container product-not-found"><h2>Product not found</h2></div>;
@@ -27,7 +31,7 @@ const ProductDetail = () => {
                     <p className="detail-description">{product.description}</p>
 
                     <div className="detail-actions">
-                        <button className="btn btn-primary btn-inquire" onClick={() => setIsModalOpen(true)}>
+                        <button className="btn btn-primary btn-inquire" onClick={handleInquire}>
                             Inquire Now
                         </button>
                         <Link to="/contact" className="btn btn-outline btn-contact">
@@ -44,12 +48,6 @@ const ProductDetail = () => {
                     )}
                 </div>
             </div>
-
-            <InquireModal
-                isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
-                product={product}
-            />
         </div>
     );
 };

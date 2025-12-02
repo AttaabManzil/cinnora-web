@@ -292,42 +292,15 @@
     border-bottom: 2px solid transparent;
     transition: all 0.3s ease;
 }
-
-.btn-text:hover {
-    border-bottom-color: var(--color-cinnamon);
 }
 
-/* About Teaser */
-.about-teaser {
-    background-color: var(--color-leafy);
-    color: var(--color-white);
-    text-align: center;
+.section-title {
+    font-size: 2.2rem;
 }
 
-.contact-cta h2 {
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-white);
+.hero {
+    height: 70vh;
 }
-
-.contact-cta p {
-    font-size: 1.2rem;
-    margin-bottom: var(--spacing-lg);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 3rem;
-    }
-
-    .section-title {
-        font-size: 2.2rem;
-    }
-
-    .hero {
-        height: 70vh;
-    }
 }
 
 /* FAQ Section */

@@ -21,7 +21,7 @@ const Products = () => {
                             <div className="product-details-page">
                                 <span className="product-category">{product.category}</span>
                                 <h3 className="product-name">{product.name}</h3>
-                                <Link to={`/products/${product.id}`} className="btn-view-product">View Product</Link>
+                                <Link to={`/products/${product.id}`} className="btn btn-primary">View Product</Link>
                             </div>
                         </div>
                     ))}
