@@ -60,14 +60,12 @@ const Contact = () => {
             <div className="contact-content">
                 <div className="container">
                     <div className="contact-grid">
+
+                        {/* --------- INFO SECTION WITHOUT ADDRESS --------- */}
                         <div className="contact-info">
                             <h2>Get in Touch</h2>
                             <p>Have questions about our products or want to place a bulk order? We're here to help.</p>
 
-                            <div className="info-item">
-                                <h3>Address</h3>
-                                <p>123 Spice Garden Road,<br />Colombo 07, Sri Lanka</p>
-                            </div>
                             <div className="info-item">
                                 <h3>Email</h3>
                                 <p>info@cinnora.store</p>
@@ -78,32 +76,39 @@ const Contact = () => {
                             </div>
                         </div>
 
+                        {/* --------- FORM --------- */}
                         <div className="contact-form-wrapper">
                             <form ref={form} onSubmit={sendEmail} className="contact-form">
-                                {/* Hidden input for product name default */}
+
                                 <input type="hidden" name="product_name" value="General Inquiry" />
 
                                 <div className="form-group">
                                     <label htmlFor="user_name">Name</label>
                                     <input type="text" name="user_name" id="user_name" required />
                                 </div>
+
                                 <div className="form-group">
                                     <label htmlFor="user_email">Email</label>
                                     <input type="email" name="user_email" id="user_email" required />
                                 </div>
+
                                 <div className="form-group">
                                     <label htmlFor="subject">Subject</label>
                                     <input type="text" name="subject" id="subject" required />
                                 </div>
+
                                 <div className="form-group">
                                     <label htmlFor="message">Message</label>
                                     <textarea name="message" id="message" rows="5" required></textarea>
                                 </div>
+
                                 <button type="submit" className="btn btn-primary btn-submit" disabled={isSending}>
                                     {isSending ? 'Sending...' : 'Send Message'}
                                 </button>
+
                             </form>
                         </div>
+
                     </div>
                 </div>
             </div>

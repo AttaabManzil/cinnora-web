@@ -94,3 +94,9 @@
         gap: var(--spacing-lg);
     }
 }
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
