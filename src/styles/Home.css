@@ -137,14 +137,16 @@ body {
 ========================================= */
 
 .hero {
-    height: 85vh;
-    min-height: 650px;
+    position: relative;
+    height: 90vh;
+    min-height: 600px;
     background-size: cover;
     background-position: center;
-    position: relative;
+    background-attachment: fixed;
     display: flex;
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;
+    padding-top: 4rem;
 }
 
 .hero-overlay {
