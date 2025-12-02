@@ -155,6 +155,7 @@ body {
 
 .hero-content {
     position: relative;
+    margin-top: 4rem;
     text-align: center;
     color: white;
     max-width: 850px;
@@ -364,5 +365,11 @@ body {
 @media (max-width: 600px) {
     .hero-title {
         font-size: 2.4rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero-content {
+        margin-top: clamp(4rem, 8vw, 9rem);
     }
 }
