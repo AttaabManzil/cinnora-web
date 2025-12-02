@@ -1,28 +1,70 @@
-/* Home.css - Premium Overhaul */
+/* =========================================
+   GLOBAL SYSTEM — Typography, Spacing, Colors
+========================================= */
 
-/* ===========================
-   GLOBAL LAYOUT
-=========================== */
+:root {
+    --font-heading: "Cormorant Garamond", serif;
+    --font-body: "Inter", sans-serif;
 
-.home {
-    width: 100%;
-    overflow-x: hidden;
+    --color-cinnamon: #A56542;
+    --color-espresso: #3C2A22;
+    --color-white: #ffffff;
+    --color-bg-primary: #f4e1b8;
+    --color-text-secondary: #6b5246;
+
+    /* Scalable spacing system */
+    --space-xs: 0.5rem;
+    --space-sm: 0.9rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.4rem;
+    --space-xl: 4.2rem;
+    --space-xxl: 6rem;
 }
+
+/* Remove default margins */
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-espresso);
+}
+
+
+/* =========================================
+   SHARED UTILS
+========================================= */
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    margin: auto;
+    padding: 0 1.5rem;
 }
 
-/* ===========================
-   ANIMATIONS
-=========================== */
+.section-title {
+    text-align: center;
+    font-size: 2.6rem;
+    font-family: var(--font-heading);
+    margin-bottom: var(--space-lg);
+    line-height: 1.2;
+}
+
+/* Subtle animation */
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.25s;
+}
+
+.delay-2 {
+    animation-delay: 0.5s;
+}
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(28px);
     }
 
     to {
@@ -31,364 +73,296 @@
     }
 }
 
-.fade-in-up {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
+
+/* =========================================
+   BUTTON SYSTEM — Minimal Elegant
+========================================= */
+
+.btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.delay-1 {
-    animation-delay: 0.2s;
+.btn-large {
+    padding: 1rem 2.4rem;
+    font-size: 1.05rem;
 }
 
-.delay-2 {
-    animation-delay: 0.4s;
+.btn-hero,
+.btn-primary {
+    background-color: var(--color-cinnamon);
+    color: var(--color-white);
 }
 
-/* ===========================
+.btn-hero:hover,
+.btn-primary:hover {
+    opacity: 0.85;
+}
+
+.btn-white {
+    background-color: var(--color-white);
+    color: var(--color-espresso);
+}
+
+.btn-white:hover {
+    opacity: 0.9;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--color-cinnamon);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-text:hover {
+    border-bottom: 2px solid var(--color-cinnamon);
+}
+
+
+/* =========================================
    HERO SECTION
-=========================== */
+========================================= */
 
 .hero {
-    position: relative;
-    height: 90vh;
-    min-height: 600px;
+    height: 85vh;
+    min-height: 650px;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color: var(--color-white);
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
+    background: rgba(0, 0, 0, 0.45);
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
-    max-width: 800px;
+    text-align: center;
+    color: white;
+    max-width: 850px;
 }
 
 .hero-title {
-    font-size: 4.5rem;
-    font-weight: 700;
-    margin-bottom: var(--spacing-md);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    margin-bottom: 1.2rem;
     line-height: 1.1;
 }
 
-/* ===========================
-   HEADINGS
-=========================== */
-
-.section-title {
-    font-size: 2.2rem;
-    text-align: center;
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2.2rem;
+    line-height: 1.6;
 }
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    margin: var(--spacing-xs) auto 0;
-    background-color: var(--color-cinnamon);
-}
 
-/* ===========================
+/* =========================================
    BENEFITS SECTION
-=========================== */
+========================================= */
 
 .benefits-section {
-    padding: var(--spacing-xl) 0;
-    background: var(--color-white);
-    overflow: hidden;
-    position: relative;
+    padding: var(--space-xl) 0;
+    background: white;
 }
 
 .benefits-container {
     display: flex;
     align-items: center;
-    position: relative;
-    z-index: 2;
+    gap: var(--space-xl);
 }
 
 .benefits-content {
-    flex: 1;
-    max-width: 60%;
-    padding-right: var(--spacing-lg);
+    flex: 1.2;
 }
 
 .benefits-subtitle {
     color: var(--color-cinnamon);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
 }
 
 .benefits-title {
-    font-size: 3.5rem;
-    color: var(--color-espresso);
     font-family: var(--font-heading);
-    margin-bottom: var(--spacing-md);
-    line-height: 1.1;
+    font-size: 3.2rem;
+    margin-bottom: var(--space-md);
 }
 
 .benefits-description {
     color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-lg);
-    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
     line-height: 1.6;
 }
 
 .benefits-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
+    display: grid;
+    gap: var(--space-md);
 }
 
 .benefit-item {
     display: flex;
-    gap: var(--spacing-md);
-    align-items: flex-start;
+    gap: 1rem;
 }
 
 .benefit-icon {
-    font-size: 1.5rem;
-    color: var(--color-cinnamon);
-    min-width: 30px;
-}
-
-.benefit-text h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-    color: var(--color-espresso);
-    letter-spacing: 1px;
-}
-
-.benefit-text p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: var(--color-text-secondary);
+    font-size: 1.8rem;
 }
 
 .benefits-image-wrapper {
-    position: absolute;
-    right: -50px;
-    top: 50%;
-    width: 50%;
-    transform: translateY(-50%);
-    opacity: 0.9;
-    pointer-events: none;
-    z-index: 1;
+    flex: 1;
 }
 
 .benefits-image {
     width: 100%;
-    object-fit: contain;
 }
 
-/* ===========================
+
+/* =========================================
    PRODUCTS GRID
-=========================== */
+========================================= */
 
 .products-section {
-    padding: var(--spacing-xl) 0;
-    background: var(--color-bg-primary);
+    background: #f8f4e9;
+    padding: var(--space-xl) 0;
 }
 
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--spacing-lg);
+    gap: var(--space-lg);
 }
 
 .product-card {
-    background: var(--color-white);
-    border-radius: 16px;
+    background: white;
+    border-radius: 14px;
     overflow: hidden;
     text-align: center;
-    transition: 0.4s;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+    padding-bottom: var(--space-md);
 }
 
 .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-6px);
 }
 
 .product-image-container {
-    height: 300px;
+    height: 280px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: #f9f9f9;
+    justify-content: center;
 }
 
 .product-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 0.5s;
 }
 
-.product-card:hover .product-image {
-    transform: scale(1.05);
+
+/* =========================================
+   STORY SECTION
+========================================= */
+
+.story-section {
+    padding: var(--space-xl) 0;
+    text-align: center;
 }
 
-.product-info {
-    padding: var(--spacing-lg);
+.story-content {
+    max-width: 750px;
+    margin: auto;
 }
 
-.product-info h3 {
-    font-size: 1.8rem;
-    color: var(--color-espresso);
+.story-highlight {
+    margin: 1rem 0 var(--space-md);
+    font-weight: bold;
+    font-size: 1.15rem;
 }
 
-.product-info p {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-md);
-}
 
-.btn-text {
-    background: none;
-    border: none;
-    color: var(--color-cinnamon);
-    font-weight: 600;
-    text-transform: uppercase;
-    border-bottom: 2px solid transparent;
-    transition: 0.3s;
-}
-
-/* ===========================
+/* =========================================
    FAQ SECTION
-=========================== */
+========================================= */
 
 .faq-section {
-    padding: var(--spacing-xl) 0;
-    background: var(--color-bg-primary);
+    padding: var(--space-xl) 0;
+    background: #faf7ef;
 }
 
 .faq-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
+    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .faq-item {
-    background: var(--color-white);
-    padding: var(--spacing-lg);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: 0.3s;
+    background: white;
+    padding: var(--space-lg);
+    border-radius: 10px;
 }
 
-.faq-item:hover {
-    transform: translateY(-5px);
+
+/* =========================================
+   CTA SECTION (BOTTOM)
+========================================= */
+
+.contact-cta {
+    padding: var(--space-xxl) 0;
+    background: var(--color-bg-primary);
+    text-align: center;
 }
 
-.faq-item h3 {
-    font-size: 1.2rem;
-    color: var(--color-cinnamon);
-    margin-bottom: var(--spacing-sm);
+.cta-content {
+    max-width: 660px;
+    margin: auto;
 }
 
-.faq-item p {
-    line-height: 1.6;
+.cta-content h2 {
+    font-size: 2.4rem;
+    font-family: var(--font-heading);
+    margin-bottom: var(--space-sm);
+}
+
+.cta-content p {
+    margin-bottom: var(--space-lg);
     color: var(--color-text-secondary);
+    font-size: 1.15rem;
 }
 
-/* ===========================
-   DECORATIVE ELEMENTS
-=========================== */
 
-.decorative-spoons {
-    position: absolute;
-    width: 300px;
-    opacity: 0.8;
-    pointer-events: none;
-    animation: float 6s ease-in-out infinite;
-    z-index: 0;
-}
-
-.decorative-spoons.left {
-    left: -100px;
-    top: 50%;
-    --rotation: 45deg;
-}
-
-.decorative-spoons.right {
-    right: -100px;
-    top: 150%;
-    --rotation: -135deg;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(var(--rotation));
-    }
-
-    50% {
-        transform: translateY(-20px) rotate(var(--rotation));
-    }
-}
-
-/* ===========================
-   RESPONSIVE FIXES
-=========================== */
+/* =========================================
+   RESPONSIVE
+========================================= */
 
 @media (max-width: 900px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
     .benefits-container {
         flex-direction: column;
-        text-align: left;
-    }
-
-    .benefits-content {
-        max-width: 100%;
-        padding-right: 0;
-    }
-
-    .benefits-image-wrapper {
-        position: relative;
-        right: 0;
-        width: 100%;
-        margin-top: var(--spacing-lg);
-        transform: none;
-        opacity: 1;
-    }
-
-    .benefits-title {
-        font-size: 2.5rem;
+        text-align: center;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .hero-title {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
     }
-
-    .hero {
-        background-attachment: scroll;
-        height: 70vh;
-    }
-}
-
-/* ===========================
-   ACCESSIBILITY
-=========================== */
-
-:focus {
-    outline: 2px solid var(--color-cinnamon);
-    outline-offset: 4px;
 }
