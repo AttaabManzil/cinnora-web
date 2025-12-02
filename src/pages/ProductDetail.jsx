@@ -13,7 +13,7 @@ const ProductDetail = () => {
     }, [id]);
 
     const handleInquire = () => {
-        const message = `I am interested in learning more about ${product.name}.`;
+        const message = `Hi, I'm interested in ${product.name}. Could you share more details?`;
         const whatsappUrl = `https://wa.me/94778778917?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     };
@@ -25,7 +25,10 @@ const ProductDetail = () => {
     return (
         <div className="product-detail-page">
             <div className="container product-detail-container">
+
+                {/* Left - Info */}
                 <div className="product-detail-info">
+
                     <span className="detail-category">{product.category}</span>
                     <h1 className="detail-title">{product.name}</h1>
                     <p className="detail-description">{product.description}</p>
@@ -34,18 +37,16 @@ const ProductDetail = () => {
                         <button className="btn btn-primary btn-inquire" onClick={handleInquire}>
                             Inquire Now
                         </button>
-                        <Link to="/contact" className="btn btn-outline btn-contact">
+
+                        <Link to="/contact" className="btn btn-white btn-contact">
                             Contact Us
                         </Link>
                     </div>
                 </div>
 
+                {/* Right - Image */}
                 <div className="product-detail-image-wrapper">
-                    {product.image ? (
-                        <img src={product.image} alt={product.name} className="detail-image" />
-                    ) : (
-                        <div className="detail-placeholder"></div>
-                    )}
+                    <img src={product.image} alt={product.name} className="detail-image" />
                 </div>
             </div>
         </div>
